@@ -8,18 +8,31 @@ const selectorslist = {
   WrongCredentialAlert: '.oxd-alert'
 }
 
+const userData = {
+  userSuccess: {
+    username: 'Admin',
+    password: 'admin123'
+  },
+
+  userFail: {
+    username: 'test',
+    password: 'test'
+  }
+  
+}
+
   it('login - success', () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
-    cy.get(selectorslist.usernameField).type('Admin')
-    cy.get(selectorslist.passwordField).type('admin123')
+    cy.get(selectorslist.usernameField).type(userData.userSuccess.username)
+    cy.get(selectorslist.passwordField).type(userData.userSuccess.password)
     cy.get(selectorslist.loginButton).click()
     cy.get(selectorslist.dashboardHeader).should('contain', 'Dashboard')
   })
 
   it('login - fail', () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
-    cy.get(selectorslist.usernameField).type('test')
-    cy.get(selectorslist.passwordField).type('test')
+    cy.get(selectorslist.usernameField).type(userData.userFail.username)
+    cy.get(selectorslist.passwordField).type(userData.userFail.password)
     cy.get(selectorslist.loginButton).click()
     cy.get(selectorslist.WrongCredentialAlert)
     
