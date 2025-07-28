@@ -1,3 +1,5 @@
+import userData from '../fixtures/user-data.json'
+
 describe('automation site orange', () => {
 
 const selectorslist = {
@@ -6,19 +8,6 @@ const selectorslist = {
   loginButton: '.oxd-button',
   dashboardHeader: '.oxd-topbar-header-breadcrumb > .oxd-text',
   WrongCredentialAlert: '.oxd-alert'
-}
-
-const userData = {
-  userSuccess: {
-    username: 'Admin',
-    password: 'admin123'
-  },
-
-  userFail: {
-    username: 'test',
-    password: 'test'
-  }
-  
 }
 
   it('login - success', () => {
