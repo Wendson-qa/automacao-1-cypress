@@ -1,7 +1,11 @@
  {
   "userSuccess": {
     "username": "Admin",
-    "password": "admin123"
+    "password": "admin123",
+    "fullname": "Udson",
+    "secundName": "Peixoto",
+    "lastName": "Sales",
+    "employeedId": "12345"
   },
 
   "userFail": {
